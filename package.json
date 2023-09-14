@@ -1,0 +1,14 @@
+{
+  "name": "teste-interacao-web-cypress-js",
+  "version": "1.0.0",
+  "description": "Interação Web com Cypress & JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thiago Roehrs",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.5.1"
+  }
+}
