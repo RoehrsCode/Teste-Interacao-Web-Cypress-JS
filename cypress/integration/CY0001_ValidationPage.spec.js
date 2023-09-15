@@ -11,6 +11,14 @@ describe('Mercado Livre Brasil - Frete Grátis no mesmo dia', function () {
         cy.title().should('be.equal', 'Mercado Livre Brasil - Frete Grátis no mesmo dia')
     })
 
+
+    it.only('Valida campo CEP: Númerico', function () {
+        cy.get('body > header > div > div.nav-header-plus-cp-wrapper.nav-area.nav-bottom-area.nav-left-area > div > a').click()
+        cy.get('#addressesForm > div > div > div > div.andes-form-control.andes-form-control--textfield.andes-form-control--default.zip-code__textfield > label > div > input').should('be.visible').type('ABC')
+        cy.get('#addressesForm > div > div > div > div.andes-form-control.andes-form-control--textfield.andes-form-control--default.zip-code__textfield > label > div > input').should('have.value', '')
+    }
+    )
+
     it('Atualiza CEP do Visitante', function () {
         cy.get('body > header > div > div.nav-header-plus-cp-wrapper.nav-area.nav-bottom-area.nav-left-area > div > a').click()
         cy.get('#addressesForm > div > div > div > div.andes-form-control.andes-form-control--textfield.andes-form-control--default.zip-code__textfield > label > div > input').should('be.visible').type('93510210')
@@ -18,9 +26,9 @@ describe('Mercado Livre Brasil - Frete Grátis no mesmo dia', function () {
     }
     )
 
-    it.only('Pesquisa um produto', function () {
+    it('Pesquisa um produto', function () {
         const text = 'Pneu de Carro Aro 35 Cor Prata Fiat 2004, 2005, 2006'
-        cy.get('#cb1-edit').click().type(text, { delay: 0}).should('have.value', text)
+        cy.get('#cb1-edit').click().type(text, { delay: 0 }).should('have.value', text)
         cy.get('body > header > div > div.nav-area.nav-top-area.nav-center-area > form > button > div').click()
     }
     )
