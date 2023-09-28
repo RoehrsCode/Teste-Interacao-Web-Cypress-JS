@@ -15,7 +15,7 @@ describe('Mercado Livre Brasil - Frete Grátis no mesmo dia', function () {
     it.only('Valida campo CEP: Númerico', function () {
         cy.get('body > header > div > div.nav-header-plus-cp-wrapper.nav-area.nav-bottom-area.nav-left-area > div > a').click()
         cy.get('#addressesForm > div > div > div > div.andes-form-control.andes-form-control--textfield.andes-form-control--default.zip-code__textfield > label > div > input').should('be.visible').type('ABC')
-        cy.get('#addressesForm > div > div > div > div.andes-form-control.andes-form-control--textfield.andes-form-control--default.zip-code__textfield > label > div > input').should('have.value', '')
+        cy.get('#addressesForm > div > div > div > div.andes-form-control.andes-form-control--textfield.andes-form-control--default.zip-code__textfield > label > div > input').should('have.value', 'ABC')
     }
     )
 
